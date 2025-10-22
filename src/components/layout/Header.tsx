@@ -92,7 +92,7 @@ export default function Header() {
             <Button
               variant="outline"
               size="sm"
-              className={`transition-all duration-300 ${
+              className={`transition-all duration-300 bg-transparent ${
                 isScrolled
                   ? "border-gray-300 text-gray-700 hover:bg-gray-50"
                   : "border-white/40 text-white hover:bg-white/20"
