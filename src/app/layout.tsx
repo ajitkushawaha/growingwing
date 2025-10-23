@@ -7,12 +7,12 @@ import Footer from "@/components/layout/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GrowingWing - Top Rated Shopify Plus Agency",
-  description: "Certified Shopify Plus Agency specializing in custom themes, apps, migrations, and CRO to help brands scale and boost conversions.",
-  keywords: "Shopify development, Shopify Plus, e-commerce, custom apps, store migration, theme customization",
+  title: "GrowingWing Technology - 10+ Years of Innovation in Digital Marketing",
+  description: "GrowingWing delivers results-driven digital solutions including SEO, Web Development, Digital Marketing, and Social Media. 10+ years of experience across diverse industries.",
+  keywords: "digital marketing, SEO, web development, social media marketing, digital solutions, e-commerce, Shopify development, online marketing",
   openGraph: {
-    title: "GrowingWing - Top Rated Shopify Plus Agency",
-    description: "Certified Shopify Plus Agency specializing in custom themes, apps, migrations, and CRO to help brands scale and boost conversions.",
+    title: "GrowingWing Technology - 10+ Years of Innovation in Digital Marketing",
+    description: "GrowingWing delivers results-driven digital solutions including SEO, Web Development, Digital Marketing, and Social Media. 10+ years of experience across diverse industries.",
     type: "website",
     locale: "en_US",
   },

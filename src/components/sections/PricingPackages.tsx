@@ -63,7 +63,7 @@ export default function PricingPackages() {
               <ul className="space-y-4 mb-8">
                 {pkg.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start space-x-3">
-                    <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <Check className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700">{feature}</span>
                   </li>
                 ))}

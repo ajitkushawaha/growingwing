@@ -1,17 +1,25 @@
 "use client"
 
 import React from "react";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import {
-  IconShoppingCart,
-  IconTrendingUp,
-  IconSettings,
-  IconRocket,
-  IconShield,
-  IconUsers,
-  IconStar,
-} from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import Link from "next/link";
+
+// Function to get the actual project URLs from GrowingWing website
+const getProjectUrl = (projectId: string) => {
+  const projectUrls: { [key: string]: string } = {
+    "aimsindia": "https://aimsindia.com",
+    "chef-supplies-hub": "https://chefsupplies.ca",
+    "copper-kitchen-store": "https://copperkitchenstore.com",
+    "ramkrushna-developers": "https://ramkrushnadevelopers.com",
+    "healing-with-roohi": "https://healingwithroohi.com",
+    "loutas": "https://www.lotusdigitalsystems.com",
+    "royaliij": "https://royaliij.com"
+  };
+  
+  return projectUrls[projectId] || `https://${projectId}.com`;
+};
 
 export default function PortfolioBento() {
   return (
@@ -25,89 +33,237 @@ export default function PortfolioBento() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Our Recent Project Work
+            Our Creative Development Projects
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover how we&apos;ve helped Shopify stores achieve remarkable growth and success
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Blending innovation with functionality to craft powerful digital platforms. Explore a portfolio that reflects excellence across diverse industries.
           </p>
         </motion.div>
 
-        <BentoGrid className="max-w-6xl mx-auto">
-          {portfolioItems.map((item, i) => (
-            <BentoGridItem
-              key={i}
-              title={item.title}
-              description={item.description}
-              header={item.header}
-              icon={item.icon}
-              link={item.link}
-              className={i === 0 || i === 3 ? "md:col-span-2" : ""}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      {/* Large featured project */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 lg:col-span-2 lg:row-span-2"
+      >
+        {/* Image */}
+        <div className="relative h-80 overflow-hidden">
+          <img
+            src={portfolioItems[0].image}
+            alt={portfolioItems[0].title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        </div>
+        
+        {/* Content Below Image */}
+        <div className="p-8">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-2xl font-bold text-gray-900">{portfolioItems[0].title}</h3>
+            <span className="text-sm font-semibold text-orange-600 bg-orange-100 px-4 py-2 rounded-full">
+              {portfolioItems[0].category}
+            </span>
+          </div>
+          
+          <p className="text-gray-600 mb-6 line-clamp-3">
+            {portfolioItems[0].description}
+          </p>
+          
+          <Button variant="outline" size="lg" className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors" asChild>
+            <Link href={getProjectUrl(portfolioItems[0].id)} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="mr-2 h-5 w-5" />
+              Visit Project
+            </Link>
+          </Button>
+        </div>
+      </motion.div>
+
+      {/* Medium project */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 lg:col-span-2"
+      >
+        {/* Image */}
+        <div className="relative h-48 overflow-hidden">
+          <img
+            src={portfolioItems[1].image}
+            alt={portfolioItems[1].title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        </div>
+        
+        {/* Content Below Image */}
+        <div className="p-6">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-xl font-bold text-gray-900">{portfolioItems[1].title}</h3>
+            <span className="text-xs font-semibold text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
+              {portfolioItems[1].category}
+            </span>
+          </div>
+          
+          <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+            {portfolioItems[1].description}
+          </p>
+          
+          <Button variant="outline" size="sm" className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors" asChild>
+            <Link href={getProjectUrl(portfolioItems[1].id)} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Visit Project
+            </Link>
+          </Button>
+        </div>
+      </motion.div>
+
+      {/* Small projects */}
+      {portfolioItems.slice(2, 4).map((item, i) => (
+        <motion.div
+          key={i + 2}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
+          viewport={{ once: true }}
+          className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+        >
+          {/* Image */}
+          <div className="relative h-32 overflow-hidden">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
-          ))}
-        </BentoGrid>
+          </div>
+          
+          {/* Content Below Image */}
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
+              <span className="text-xs font-semibold text-orange-600 bg-orange-100 px-2 py-1 rounded-full">
+                {item.category}
+              </span>
+            </div>
+            
+            <p className="text-gray-600 text-xs mb-3 line-clamp-2">
+              {item.description}
+            </p>
+            
+            <Button variant="outline" size="sm" className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors" asChild>
+              <Link href={getProjectUrl(item.id)} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="mr-2 h-3 w-3" />
+                Visit
+              </Link>
+            </Button>
+          </div>
+        </motion.div>
+      ))}
+
+      {/* Additional projects in a row */}
+      {portfolioItems.slice(4).map((item, i) => (
+        <motion.div
+          key={i + 4}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
+          viewport={{ once: true }}
+          className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 lg:col-span-2"
+        >
+          {/* Image */}
+          <div className="relative h-40 overflow-hidden">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+          
+          {/* Content Below Image */}
+          <div className="p-6">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+              <span className="text-xs font-semibold text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
+                {item.category}
+              </span>
+            </div>
+            
+            <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+              {item.description}
+            </p>
+            
+            <Button variant="outline" size="sm" className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors" asChild>
+              <Link href={getProjectUrl(item.id)} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Visit Project
+              </Link>
+            </Button>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+        {/* View All Projects Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <Button size="lg" asChild>
+            <Link href="/portfolio">
+              View All Projects
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
 }
 
-const ProjectSkeleton = ({ bgColor = "from-blue-500 to-blue-600", icon }: { bgColor?: string; icon: React.ReactNode }) => (
-  <div className={`flex flex-1 w-full h-full min-h-[8rem] rounded-xl bg-gradient-to-br ${bgColor} items-center justify-center shadow-sm`}>
-    <div className="text-white text-center">
-      <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-        {icon}
-      </div>
-    </div>
-  </div>
-);
 
 const portfolioItems = [
   {
-    title: "E-commerce Fashion Store",
-    description: "Complete Shopify Plus redesign with 150% increase in conversion rate and 200% boost in mobile sales.",
-    header: <ProjectSkeleton bgColor="from-blue-500 to-blue-600" icon={<IconTrendingUp className="h-8 w-8" />} />,
-    icon: <IconTrendingUp className="h-6 w-6 text-white" />,
-    link: "/portfolio/fashion-store",
+    id: "aimsindia",
+    title: "Aimsindia",
+    category: "Education",
+    image: "/portfolio/aimsinda.webp",
+    description: "AIMS India is committed to excellence in education, training, and career growth.",
+    link: "/portfolio/aimsindia",
   },
   {
-    title: "Electronics Marketplace",
-    description: "Custom app development and theme customization resulting in 300% growth in average order value.",
-    header: <ProjectSkeleton bgColor="from-blue-600 to-blue-700" icon={<IconSettings className="h-8 w-8" />} />,
-    icon: <IconSettings className="h-6 w-6 text-white" />,
-    link: "/portfolio/electronics-marketplace",
+    id: "chef-supplies-hub",
+    title: "Chef Supplies Hub",
+    category: "Food & Beverage",
+    image: "/portfolio/chef.webp",
+    description: "Welcome to ChefSuppliesHub – your one-stop shop for quality chef tools.",
+    link: "/portfolio/chef-supplies-hub",
   },
   {
-    title: "Health & Beauty Brand",
-    description: "Store migration from WooCommerce to Shopify Plus with zero downtime and improved SEO rankings.",
-    header: <ProjectSkeleton bgColor="from-blue-400 to-blue-500" icon={<IconRocket className="h-8 w-8" />} />,
-    icon: <IconRocket className="h-6 w-6 text-white" />,
-    link: "/portfolio/health-beauty",
+    id: "copper-kitchen-store",
+    title: "Copper Kitchen Store",
+    category: "Food & Beverage",
+    image: "/portfolio/copper.webp",
+    description: "Copper Kitchen Store – timeless copperware for modern kitchens.",
+    link: "/portfolio/copper-kitchen-store",
   },
   {
-    title: "Luxury Watch Collection",
-    description: "Premium Shopify Plus store with advanced product customization and AR try-on features, achieving 400% revenue growth.",
-    header: <ProjectSkeleton bgColor="from-blue-700 to-blue-800" icon={<IconShield className="h-8 w-8" />} />,
-    icon: <IconShield className="h-6 w-6 text-white" />,
-    link: "/portfolio/luxury-watches",
+    id: "ramkrushna-developers",
+    title: "Ramkrushna Developers",
+    category: "Real Estate",
+    image: "/portfolio/ramkrusna.webp",
+    description: "Trusted developer specializing in residential and redevelopment projects.",
+    link: "/portfolio/ramkrushna-developers",
   },
   {
-    title: "Sports Equipment Store",
-    description: "Speed optimization and mobile-first design leading to 50% faster load times and 80% better mobile experience.",
-    header: <ProjectSkeleton bgColor="from-blue-500 to-blue-600" icon={<IconUsers className="h-8 w-8" />} />,
-    icon: <IconUsers className="h-6 w-6 text-white" />,
-    link: "/portfolio/sports-equipment",
-  },
-  {
-    title: "Home Decor Marketplace",
-    description: "Multi-vendor marketplace setup with custom vendor dashboard and automated inventory management.",
-    header: <ProjectSkeleton bgColor="from-blue-600 to-blue-700" icon={<IconStar className="h-8 w-8" />} />,
-    icon: <IconStar className="h-6 w-6 text-white" />,
-    link: "/portfolio/home-decor",
-  },
-  {
-    title: "Food & Beverage Brand",
-    description: "Subscription box integration with recurring billing and customer portal, increasing customer lifetime value by 250%.",
-    header: <ProjectSkeleton bgColor="from-blue-400 to-blue-500" icon={<IconShoppingCart className="h-8 w-8" />} />,
-    icon: <IconShoppingCart className="h-6 w-6 text-white" />,
-    link: "/portfolio/food-beverage",
+    id: "healing-with-roohi",
+    title: "Healing With Roohi",
+    category: "Health & Beauty",
+    image: "/portfolio/roohi.webp",
+    description: "Healing with Roohi is a wellness platform dedicated to guiding individuals.",
+    link: "/portfolio/healing-with-roohi",
   },
 ];

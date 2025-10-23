@@ -3,31 +3,148 @@
 import { motion } from "framer-motion"
 import { testimonials } from "@/lib/constants"
 import { Star, Quote, ThumbsUp, Award, Users } from "lucide-react"
+import Link from "next/link"
 
 export default function ReviewsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden pt-16 sm:pt-20 relative">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Glowing Lines */}
+          <div className="absolute inset-0">
+            <motion.div
+              className="absolute top-1/4 left-1/4 w-96 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              animate={{
+                x: [-100, 100, -100],
+                opacity: [0.3, 0.8, 0.3]
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute top-1/3 right-1/4 w-80 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              animate={{
+                x: [100, -100, 100],
+                opacity: [0.3, 0.8, 0.3]
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2
+              }}
+            />
+            <motion.div
+              className="absolute bottom-1/3 left-1/3 w-72 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              animate={{
+                x: [-80, 80, -80],
+                opacity: [0.2, 0.6, 0.2]
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 4
+              }}
+            />
+          </div>
+
+          {/* Floating Orbs */}
+          <motion.div
+            className="absolute top-1/4 right-1/4 w-4 h-4 bg-orange-400/20 rounded-full"
+            animate={{
+              y: [-20, 20, -20],
+              opacity: [0.3, 0.8, 0.3]
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 left-1/4 w-6 h-6 bg-blue-400/20 rounded-full"
+            animate={{
+              y: [20, -20, 20],
+              opacity: [0.2, 0.6, 0.2]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1
+            }}
+          />
+          <motion.div
+            className="absolute top-1/2 right-1/3 w-3 h-3 bg-purple-400/20 rounded-full"
+            animate={{
+              y: [-15, 15, -15],
+              opacity: [0.4, 0.7, 0.4]
+            }}
+            transition={{
+              duration: 7,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 3
+            }}
+          />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-4xl mx-auto text-white"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Client <span className="gradient-text">Reviews</span>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center space-x-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 rounded-full px-6 py-3 mb-8"
+            >
+              <Star className="h-5 w-5 text-orange-400" />
+              <span className="text-orange-200 font-semibold">Client Reviews</span>
+            </motion.div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6">
+              Client <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Reviews</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               What our clients say about us - reviews of our clients
             </p>
-            <div className="flex items-center justify-center space-x-2 text-yellow-500">
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="inline-flex items-center justify-center space-x-2 text-yellow-400 mb-8"
+            >
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-8 w-8 fill-current" />
               ))}
-              <span className="ml-2 text-lg font-semibold text-gray-700">4.9/5 Average Rating</span>
-            </div>
+              <span className="ml-2 text-lg font-semibold text-white">4.9/5 Average Rating</span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center relative z-10"
+            >
+              <Link href="/contact" className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block text-center">
+                Get Started Today
+              </Link>
+              <Link href="/portfolio" className="border-2 border-orange-400 text-orange-400 bg-transparent px-8 py-3 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-colors inline-block text-center">
+                View Our Work
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -44,7 +161,7 @@ export default function ReviewsPage() {
           >
             {[
               { icon: <Star className="h-8 w-8 text-yellow-500" />, value: "4.9/5", label: "Average Rating" },
-              { icon: <Users className="h-8 w-8 text-blue-500" />, value: "290+", label: "Happy Clients" },
+              { icon: <Users className="h-8 w-8 text-orange-500" />, value: "290+", label: "Happy Clients" },
               { icon: <ThumbsUp className="h-8 w-8 text-green-500" />, value: "96%", label: "Satisfaction Rate" },
               { icon: <Award className="h-8 w-8 text-purple-500" />, value: "10+", label: "Years Experience" }
             ].map((stat, index) => (
@@ -221,10 +338,10 @@ export default function ReviewsPage() {
               We&apos;re committed to your success and satisfaction.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                 Get Started Today
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
                 View Our Work
               </button>
             </div>

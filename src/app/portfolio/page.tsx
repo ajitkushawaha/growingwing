@@ -4,10 +4,25 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { portfolio } from "@/lib/constants"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ExternalLink, Filter } from "lucide-react"
+import { ArrowRight, ExternalLink, Filter, Star } from "lucide-react"
 import Link from "next/link"
 
-const categories = ["All", "Electronics", "Health & Beauty", "Sports & Recreation", "Food & Beverage", "Kids & Baby", "Cameras & Optics"]
+// Function to get the actual project URLs from GrowingWing website
+const getProjectUrl = (projectId: string) => {
+  const projectUrls: { [key: string]: string } = {
+    "aimsindia": "https://aimsindia.com",
+    "chef-supplies-hub": "https://chefsupplies.ca",
+    "copper-kitchen-store": "https://copperkitchenstore.com",
+    "ramkrushna-developers": "https://ramkrushnadevelopers.com",
+    "healing-with-roohi": "https://healingwithroohi.com",
+    "loutas": "https://www.lotusdigitalsystems.com",
+    "royaliij": "https://royaliij.com"
+  };
+  
+  return projectUrls[projectId] || `https://${projectId}.com`;
+};
+
+const categories = ["All", "Electronics", "Health & Beauty", "Food & Beverage", "Real Estate", "Education"]
 
 export default function PortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -20,25 +35,144 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden pt-16 sm:pt-20 relative">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Glowing Lines */}
+          <div className="absolute inset-0">
+            <motion.div
+              className="absolute top-1/4 left-1/4 w-96 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              animate={{
+                x: [-100, 100, -100],
+                opacity: [0.3, 0.8, 0.3]
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute top-1/3 right-1/4 w-80 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              animate={{
+                x: [100, -100, 100],
+                opacity: [0.3, 0.8, 0.3]
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2
+              }}
+            />
+            <motion.div
+              className="absolute bottom-1/3 left-1/3 w-72 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              animate={{
+                x: [-80, 80, -80],
+                opacity: [0.2, 0.6, 0.2]
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 4
+              }}
+            />
+          </div>
+
+          {/* Floating Orbs */}
+          <motion.div
+            className="absolute top-1/4 right-1/4 w-4 h-4 bg-orange-400/20 rounded-full"
+            animate={{
+              y: [-20, 20, -20],
+              opacity: [0.3, 0.8, 0.3]
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 left-1/4 w-6 h-6 bg-blue-400/20 rounded-full"
+            animate={{
+              y: [20, -20, 20],
+              opacity: [0.2, 0.6, 0.2]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1
+            }}
+          />
+          <motion.div
+            className="absolute top-1/2 right-1/3 w-3 h-3 bg-purple-400/20 rounded-full"
+            animate={{
+              y: [-15, 15, -15],
+              opacity: [0.4, 0.7, 0.4]
+            }}
+            transition={{
+              duration: 7,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 3
+            }}
+          />
+        </div>
+
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8 min-h-screen flex items-center py-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-xs sm:max-w-4xl mx-auto text-white"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Our <span className="gradient-text">Portfolio</span>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center space-x-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 rounded-full px-3 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8"
+            >
+              <Star className="h-5 w-5 text-orange-400" />
+              <span className="text-orange-200 font-semibold">Portfolio Showcase</span>
+            </motion.div>
+
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6">
+              Our <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Creative</span> Projects
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            
+            <p className="text-sm sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-xs sm:max-w-3xl mx-auto px-2">
               With our digital marketing proficiency, each client associated with us has given us positive feedback, 
               and tons of appreciation. Here is the showcase of a few of our works:
             </p>
-            <div className="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-6 py-3">
-              <span className="text-blue-600 font-semibold">Best business strategy of all times:</span>
-              <span className="text-blue-800 font-bold">100% CUSTOMER SATISFACTION</span>
-            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-8 py-4 mb-8"
+            >
+              <span className="text-white font-semibold">Best business strategy of all times:</span>
+              <span className="text-orange-300 font-bold">100% CUSTOMER SATISFACTION</span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center relative z-10"
+            >
+              <Button size="lg" variant="secondary" asChild>
+                <Link href="/contact">
+                  Start Your Project
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="text-orange-500 border-orange-500 bg-transparent hover:bg-orange-500 hover:text-white transition-colors" asChild>
+                <Link href="#portfolio-grid">View Projects</Link>
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -99,7 +233,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Portfolio Grid */}
-      <section className="section-padding bg-gray-50">
+      <section id="portfolio-grid" className="section-padding bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPortfolio.map((project, index) => (
@@ -111,59 +245,32 @@ export default function PortfolioPage() {
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
               >
                 {/* Project Image */}
-                <div className="relative h-64 bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <ExternalLink className="h-8 w-8" />
-                      </div>
-                      <h3 className="text-xl font-bold">{project.title}</h3>
-                      <p className="text-sm opacity-90">{project.category}</p>
-                    </div>
-                  </div>
-                  
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-blue-600/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Button variant="secondary" size="sm">
-                      View Project
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </div>
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
 
                 {/* Project Content */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
                     <h4 className="text-lg font-bold text-gray-900">{project.title}</h4>
-                    <span className="text-xs font-semibold text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
+                    <span className="text-xs font-semibold text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
                       {project.category}
                     </span>
                   </div>
                   
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  <p className="text-gray-600 text-sm mb-6 line-clamp-3">
                     {project.description}
                   </p>
 
-                  {/* Results */}
-                  <div className="grid grid-cols-3 gap-4 mb-4">
-                    <div className="text-center">
-                      <div className="text-lg font-bold text-green-600">{project.results.conversion}</div>
-                      <div className="text-xs text-gray-500">Conversion</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-lg font-bold text-blue-600">{project.results.speed}</div>
-                      <div className="text-xs text-gray-500">Speed</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-lg font-bold text-purple-600">{project.results.revenue}</div>
-                      <div className="text-xs text-gray-500">Revenue</div>
-                    </div>
-                  </div>
-
-                  <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-50 group-hover:border-blue-300 transition-colors">
-                    View Case Study
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <Button variant="outline" size="sm" className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors" asChild>
+                    <Link href={getProjectUrl(project.id)} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Project
+                    </Link>
                   </Button>
                 </div>
               </motion.div>

@@ -7,13 +7,13 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section className="h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden pt-30">
+    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden pt-16 sm:pt-20">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         {/* Glowing Lines */}
         <div className="absolute inset-0">
           <motion.div
-            className="absolute top-1/4 left-1/4 w-96 h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent"
+            className="absolute top-1/4 left-1/4 w-96 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
             animate={{
               x: [-100, 100, -100],
               opacity: [0.3, 0.8, 0.3]
@@ -25,7 +25,7 @@ export default function Hero() {
             }}
           />
           <motion.div
-            className="absolute top-1/3 right-1/4 w-80 h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"
+            className="absolute top-1/3 right-1/4 w-80 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
             animate={{
               x: [100, -100, 100],
               opacity: [0.3, 0.8, 0.3]
@@ -38,7 +38,7 @@ export default function Hero() {
             }}
           />
           <motion.div
-            className="absolute bottom-1/3 left-1/3 w-72 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"
+            className="absolute bottom-1/3 left-1/3 w-72 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
             animate={{
               x: [-80, 80, -80],
               opacity: [0.2, 0.6, 0.2]
@@ -68,7 +68,7 @@ export default function Hero() {
           return (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-purple-400/40 rounded-full"
+              className="absolute w-1 h-1 bg-orange-400/40 rounded-full"
               style={{
                 left: `${left}%`,
                 top: `${top}%`,
@@ -89,19 +89,19 @@ export default function Hero() {
         })}
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex items-center justify-center h-full">
-          <div className="text-center max-w-4xl">
+      <div className="container mx-auto px-3 sm:px-6 lg:px-8 min-h-screen relative z-10 py-8">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center max-w-xs sm:max-w-4xl">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full px-6 py-3 mb-8"
+              className="inline-flex items-center bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full px-3 sm:px-6 py-1.5 sm:py-3 mb-4 sm:mb-8"
             >
               <div className="flex items-center space-x-2">
-                <Star className="h-4 w-4 text-purple-400 fill-current" />
-                <span className="text-sm font-medium text-white">Shopify Plus Agency</span>
+                <Star className="h-4 w-4 text-orange-400 fill-current" />
+                <span className="text-xs sm:text-sm font-medium text-white">10+ Years of Innovation</span>
               </div>
             </motion.div>
 
@@ -112,14 +112,14 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mb-6"
             >
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                Build like the best
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+                Digital Marketing
                 <br />
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                  e-commerce teams
+                <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+                  That Drives Growth
                 </span>
                 <br />
-                on the planet
+                & Results
               </h1>
             </motion.div>
 
@@ -128,10 +128,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed"
+              className="text-sm sm:text-lg md:text-xl text-slate-300 max-w-xs sm:max-w-3xl mx-auto mb-6 sm:mb-10 md:mb-12 leading-relaxed px-2"
             >
-              With custom Shopify development, advanced integrations, and the world&apos;s most trusted e-commerce platform, 
-              we give your business everything it needs to scale faster and convert better.
+              We help businesses grow through strategic digital marketing, creative development, and data-driven solutions. 
+              From web design to SEO, social media to e-commerce - we&apos;ve got you covered.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -139,7 +139,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center relative z-10 px-2"
             >
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -148,11 +148,11 @@ export default function Hero() {
               >
                 <Button 
                   size="lg" 
-                  className="group bg-white text-slate-900 hover:bg-slate-100 border-0 shadow-xl px-8 py-4 text-lg font-semibold rounded-lg" 
+                  className="group bg-white text-slate-900 hover:bg-slate-100 border-0 shadow-xl px-4 sm:px-8 py-2.5 sm:py-4 text-sm sm:text-lg font-semibold rounded-lg w-full sm:w-auto" 
                   asChild
                 >
                   <Link href="/portfolio">
-                    Get started
+                    View Our Work
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
@@ -165,27 +165,38 @@ export default function Hero() {
               >
                 <Button 
                   size="lg" 
-                  className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white hover:bg-slate-700/50 shadow-xl px-8 py-4 text-lg font-semibold rounded-lg" 
+                  className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white hover:bg-slate-700/50 shadow-xl px-4 sm:px-8 py-2.5 sm:py-4 text-sm sm:text-lg font-semibold rounded-lg w-full sm:w-auto" 
                   asChild
                 >
-                  <Link href="/contact">Create a free consultation</Link>
+                  <Link href="/contact">Get Free Quote</Link>
                 </Button>
               </motion.div>
             </motion.div>
 
-            {/* Trust Indicators */}
+            {/* Key Achievements */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
-              className="mt-16 pt-8 border-t border-slate-700/50"
+              className="mt-8 sm:mt-16 pt-4 sm:pt-8 border-t border-slate-700/50"
             >
-              <p className="text-sm text-slate-400 mb-6">Trusted by leading e-commerce brands</p>
-              <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-                <div className="text-2xl font-bold text-white">Shopify</div>
-                <div className="text-2xl font-bold text-white">Shopify Plus</div>
-                <div className="text-2xl font-bold text-white">WooCommerce</div>
-                <div className="text-2xl font-bold text-white">Magento</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-6 text-center px-2">
+                <div className="space-y-1 sm:space-y-2">
+                  <div className="text-lg sm:text-3xl font-bold text-orange-400">290+</div>
+                  <div className="text-xs sm:text-sm text-slate-400">Happy Clients</div>
+                </div>
+                <div className="space-y-1 sm:space-y-2">
+                  <div className="text-lg sm:text-3xl font-bold text-orange-400">500+</div>
+                  <div className="text-xs sm:text-sm text-slate-400">Projects Completed</div>
+                </div>
+                <div className="space-y-1 sm:space-y-2">
+                  <div className="text-lg sm:text-3xl font-bold text-orange-400">96%</div>
+                  <div className="text-xs sm:text-sm text-slate-400">Success Rate</div>
+                </div>
+                <div className="space-y-1 sm:space-y-2">
+                  <div className="text-lg sm:text-3xl font-bold text-orange-400">24/7</div>
+                  <div className="text-xs sm:text-sm text-slate-400">Support</div>
+                </div>
               </div>
             </motion.div>
           </div>

@@ -11,7 +11,7 @@ const navigation = [
   { name: "Reviews", href: "/reviews" },
   {
     name: "Career",
-    href: "#",
+    href: "/career",
     children: [
       { name: "Jobs", href: "/career/jobs" },
       { name: "Internship", href: "/career/internship" },
@@ -34,23 +34,25 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "bg-white/90 shadow-lg backdrop-blur-md"
-          : "bg-transparent backdrop-blur-sm"
+          ? "bg-white/95 shadow-lg backdrop-blur-md"
+          : "bg-black/20 backdrop-blur-sm"
       }`}
     >
       <nav
-        className="container mx-auto px-4 sm:px-6 lg:px-8"
+        className="container mx-auto px-1 sm:px-6 lg:px-8"
         aria-label="Main navigation"
       >
-        <div className="flex w-full items-center justify-between py-3">
-          <Link href="/" className="flex items-center">
-            <span
-              className={`text-xl font-bold transition-colors duration-300 ${
-                isScrolled ? "text-gray-900" : "text-white"
-              }`}
-            >
-              GrowingWing
-            </span>
+        <div className="flex w-full items-center justify-between py-2 sm:py-3 min-w-0">
+          <Link href="/" className="flex items-center flex-shrink-0">
+            <img 
+              src="https://growingwing.net/public/img/growing-logo.png" 
+              alt="GrowingWing" 
+              className="h-6 sm:h-8 md:h-10 w-auto max-w-[120px] sm:max-w-none" 
+              style={{ 
+                filter: 'drop-shadow(0 0 0 transparent)',
+                mixBlendMode: 'multiply'
+              }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -61,7 +63,7 @@ export default function Header() {
                   href={item.href}
                   className={`flex items-center text-sm font-medium transition-colors duration-300 ${
                     isScrolled
-                      ? "text-gray-700 hover:text-blue-600"
+                      ? "text-gray-700 hover:text-orange-600"
                       : "text-white/90 hover:text-white"
                   }`}
                 >
@@ -75,7 +77,7 @@ export default function Header() {
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600"
                         >
                           {child.name}
                         </Link>
@@ -104,18 +106,18 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex-shrink-0 ml-2">
             <button
               type="button"
               aria-controls="mobile-menu"
               aria-expanded={mobileMenuOpen}
-              className={`bg-transparent duration-300 ${
+              className={`bg-transparent duration-300 p-1 ${
                 isScrolled ? "text-gray-700" : "text-white"
               }`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">Toggle menu</span>
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
@@ -123,23 +125,23 @@ export default function Header() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div id="mobile-menu" className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t shadow-lg">
               {navigation.map((item) => (
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md"
+                    className="block px-2 sm:px-3 py-2 text-sm sm:text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
                   {item.children && (
-                    <div className="pl-4 space-y-1">
+                    <div className="pl-3 sm:pl-4 space-y-1">
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md"
+                          className="block px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm text-gray-600 hover:text-orange-600 hover:bg-gray-50 rounded-md"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {child.name}
@@ -149,8 +151,8 @@ export default function Header() {
                   )}
                 </div>
               ))}
-              <div className="pt-4">
-                <Button variant="outline" className="w-full" asChild>
+              <div className="pt-3 sm:pt-4">
+                <Button variant="outline" className="w-full text-xs sm:text-sm" asChild>
                   <Link href="/contact">Get a Free Quote</Link>
                 </Button>
               </div>

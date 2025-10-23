@@ -75,83 +75,11 @@ export const services = [
 
 export const portfolio = [
   {
-    id: "rad-roller",
-    title: "Rad Roller",
-    category: "Sports & Recreation",
-    image: "/images/portfolio/rad-roller.jpg",
-    description: "Complete Shopify store redesign with enhanced product pages and checkout optimization.",
-    results: {
-      conversion: "+45%",
-      speed: "+60%",
-      revenue: "+120%"
-    }
-  },
-  {
-    id: "retrospec",
-    title: "Retrospec",
-    category: "Sports & Recreation",
-    image: "/images/portfolio/retrospec.jpg",
-    description: "Custom theme development with advanced filtering and mobile optimization.",
-    results: {
-      conversion: "+38%",
-      speed: "+55%",
-      revenue: "+95%"
-    }
-  },
-  {
-    id: "au-naturale",
-    title: "Au Naturale",
-    category: "Health & Beauty",
-    image: "/images/portfolio/au-naturale.jpg",
-    description: "E-commerce migration with custom app integrations and subscription management.",
-    results: {
-      conversion: "+52%",
-      speed: "+70%",
-      revenue: "+150%"
-    }
-  },
-  {
-    id: "pretavoir",
-    title: "Pretavoir",
-    category: "Cameras & Optics",
-    image: "/images/portfolio/pretavoir.jpg",
-    description: "Advanced product configuration with AR try-on features and custom checkout.",
-    results: {
-      conversion: "+41%",
-      speed: "+48%",
-      revenue: "+110%"
-    }
-  },
-  {
-    id: "watchstatus",
-    title: "Watchstatus",
-    category: "Electronics",
-    image: "/images/portfolio/watchstatus.jpg",
-    description: "Luxury watch store with custom authentication and payment gateways.",
-    results: {
-      conversion: "+67%",
-      speed: "+65%",
-      revenue: "+180%"
-    }
-  },
-  {
-    id: "electric-kicks",
-    title: "Electric Kicks",
-    category: "Electronics",
-    image: "/images/portfolio/electric-kicks.jpg",
-    description: "Electric scooter store with custom product builder and financing options.",
-    results: {
-      conversion: "+43%",
-      speed: "+58%",
-      revenue: "+135%"
-    }
-  },
-  {
-    id: "vahdam",
-    title: "Vahdam",
-    category: "Food & Beverage",
-    image: "/images/portfolio/vahdam.jpg",
-    description: "Tea subscription service with custom recurring billing and inventory management.",
+    id: "aimsindia",
+    title: "Aimsindia",
+    category: "Education",
+    image: "/portfolio/aimsinda.webp",
+    description: "AIMS India is committed to excellence in education, training, and career growth.",
     results: {
       conversion: "+56%",
       speed: "+62%",
@@ -159,11 +87,47 @@ export const portfolio = [
     }
   },
   {
-    id: "cut-rate-batteries",
-    title: "Cut Rate Batteries",
-    category: "Electronics",
-    image: "/images/portfolio/cut-rate-batteries.jpg",
-    description: "Battery store with advanced search filters and compatibility checker.",
+    id: "chef-supplies-hub",
+    title: "Chef Supplies Hub",
+    category: "Food & Beverage",
+    image: "/portfolio/chef.webp",
+    description: "Welcome to ChefSuppliesHub – your one-stop shop for quality chef tools.",
+    results: {
+      conversion: "+41%",
+      speed: "+48%",
+      revenue: "+110%"
+    }
+  },
+  {
+    id: "copper-kitchen-store",
+    title: "Copper Kitchen Store",
+    category: "Food & Beverage",
+    image: "/portfolio/copper.webp",
+    description: "Copper Kitchen Store – timeless copperware for modern kitchens.",
+    results: {
+      conversion: "+67%",
+      speed: "+65%",
+      revenue: "+180%"
+    }
+  },
+  {
+    id: "ramkrushna-developers",
+    title: "Ramkrushna Developers",
+    category: "Real Estate",
+    image: "/portfolio/ramkrusna.webp",
+    description: "Trusted developer specializing in residential and redevelopment projects.",
+    results: {
+      conversion: "+43%",
+      speed: "+58%",
+      revenue: "+135%"
+    }
+  },
+  {
+    id: "healing-with-roohi",
+    title: "Healing With Roohi",
+    category: "Health & Beauty",
+    image: "/portfolio/roohi.webp",
+    description: "Healing with Roohi is a wellness platform dedicated to guiding individuals.",
     results: {
       conversion: "+39%",
       speed: "+53%",
@@ -171,15 +135,27 @@ export const portfolio = [
     }
   },
   {
-    id: "kidamento",
-    title: "Kidamento",
-    category: "Kids & Baby",
-    image: "/images/portfolio/kidamento.jpg",
-    description: "Children's products store with age-based recommendations and safety features.",
+    id: "loutas",
+    title: "Lotus Digital Systems",
+    category: "Electronics",
+    image: "/portfolio/Loutas.png",
+    description: "India's largest printing solutions manufacturer specializing in state-of-the-art large format inkjet printers for diverse industries and applications.",
+    results: {
+      conversion: "+52%",
+      speed: "+59%",
+      revenue: "+165%"
+    }
+  },
+  {
+    id: "royaliij",
+    title: "RoyaliiJ",
+    category: "Electronics",
+    image: "/portfolio/royaliij.png",
+    description: "Royal Industrial Imaging Technologies provides inkjet printer controllers, ink delivery systems, and customized solutions for industrial printing applications.",
     results: {
       conversion: "+48%",
-      speed: "+59%",
-      revenue: "+160%"
+      speed: "+61%",
+      revenue: "+155%"
     }
   }
 ]

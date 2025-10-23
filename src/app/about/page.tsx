@@ -21,27 +21,144 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden pt-16 sm:pt-20 relative">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Glowing Lines */}
+          <div className="absolute inset-0">
+            <motion.div
+              className="absolute top-1/4 left-1/4 w-96 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              animate={{
+                x: [-100, 100, -100],
+                opacity: [0.3, 0.8, 0.3]
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute top-1/3 right-1/4 w-80 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              animate={{
+                x: [100, -100, 100],
+                opacity: [0.3, 0.8, 0.3]
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2
+              }}
+            />
+            <motion.div
+              className="absolute bottom-1/3 left-1/3 w-72 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              animate={{
+                x: [-80, 80, -80],
+                opacity: [0.2, 0.6, 0.2]
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 4
+              }}
+            />
+          </div>
+
+          {/* Floating Orbs */}
+          <motion.div
+            className="absolute top-1/4 right-1/4 w-4 h-4 bg-orange-400/20 rounded-full"
+            animate={{
+              y: [-20, 20, -20],
+              opacity: [0.3, 0.8, 0.3]
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 left-1/4 w-6 h-6 bg-blue-400/20 rounded-full"
+            animate={{
+              y: [20, -20, 20],
+              opacity: [0.2, 0.6, 0.2]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1
+            }}
+          />
+          <motion.div
+            className="absolute top-1/2 right-1/3 w-3 h-3 bg-purple-400/20 rounded-full"
+            animate={{
+              y: [-15, 15, -15],
+              opacity: [0.4, 0.7, 0.4]
+            }}
+            transition={{
+              duration: 7,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 3
+            }}
+          />
+        </div>
+
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8 min-h-screen flex items-center py-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-xs sm:max-w-4xl mx-auto text-white"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              About <span className="gradient-text">GrowingWing</span>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center space-x-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 rounded-full px-3 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8"
+            >
+              <Star className="h-5 w-5 text-orange-400" />
+              <span className="text-orange-200 font-semibold">About Our Company</span>
+            </motion.div>
+
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6">
+              About <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">GrowingWing</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            
+            <p className="text-sm sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-xs sm:max-w-3xl mx-auto px-2">
               We believe in growing your business by branding on web and provide all type of services 
               from development to marketing.
             </p>
-            <Button size="lg" asChild>
-              <Link href="/contact">
-                Get In Touch
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 sm:px-8 py-2 sm:py-4 mb-6 sm:mb-8"
+            >
+              <span className="text-white font-semibold">Our Mission:</span>
+              <span className="text-orange-300 font-bold">GROW YOUR BUSINESS</span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center relative z-10 px-2"
+            >
+              <Button size="lg" variant="secondary" asChild>
+                <Link href="/contact">
+                  Get In Touch
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="text-orange-400 border-orange-400 bg-transparent hover:bg-orange-500 hover:text-white transition-colors" asChild>
+                <Link href="/portfolio">View Our Work</Link>
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -84,11 +201,11 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8">
+              <div className="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-8">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Target className="h-6 w-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Target className="h-6 w-6 text-orange-600" />
                     </div>
                     <h3 className="font-bold text-gray-900 mb-2">Strategic Planning</h3>
                     <p className="text-sm text-gray-600">Data-driven strategies for growth</p>
@@ -149,7 +266,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-center bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="text-4xl font-bold text-blue-600 mb-2">{stat.value}</div>
+                <div className="text-4xl font-bold text-orange-600 mb-2">{stat.value}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
@@ -183,7 +300,7 @@ export default function AboutPage() {
                 description: "Our team never compromises on standards. We deliver high-quality solutions that exceed expectations."
               },
               {
-                icon: <Users className="h-8 w-8 text-blue-600" />,
+                icon: <Users className="h-8 w-8 text-orange-600" />,
                 title: "Client Satisfaction",
                 description: "Happy clients bring us new opportunities and growth. We prioritize long-term relationships."
               },
@@ -228,7 +345,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="section-padding bg-gradient-to-r from-orange-600 to-orange-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -248,7 +365,7 @@ export default function AboutPage() {
               <Button size="lg" variant="secondary" asChild>
                 <Link href="/contact">Get Started Today</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-blue-600" asChild>
+              <Button size="lg" variant="outline" className="text-orange-500 border-orange-500 bg-transparent hover:bg-orange-500 hover:text-white transition-colors" asChild>
                 <Link href="/portfolio">View Our Work</Link>
               </Button>
             </div>

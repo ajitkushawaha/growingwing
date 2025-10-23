@@ -88,7 +88,7 @@ export default function Services() {
                   <div className="pt-4">
                     <Button 
                       variant="outline" 
-                      className="w-full group-hover:bg-blue-50 group-hover:border-blue-300 transition-colors"
+                      className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors"
                       asChild
                     >
                       <Link href={`/services/${service.id}`}>
@@ -111,7 +111,7 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 lg:p-12">
+          <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8 lg:p-12">
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
               Meeting Your Digital Marketing Services needs is our priority
             </h3>
@@ -122,15 +122,15 @@ export default function Services() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="text-center">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-blue-600 font-bold">✓</span>
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-orange-600 font-bold">✓</span>
                 </div>
                 <p className="font-semibold text-gray-900">Quality comes first</p>
                 <p className="text-sm text-gray-600">our team never compromises on standards</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-green-600 font-bold">✓</span>
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-orange-600 font-bold">✓</span>
                 </div>
                 <p className="font-semibold text-gray-900">Happy clients</p>
                 <p className="text-sm text-gray-600">bring us new opportunities and growth</p>
