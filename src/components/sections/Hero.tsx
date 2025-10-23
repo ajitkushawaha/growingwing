@@ -7,15 +7,15 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden pt-16 sm:pt-20">
+    <section className="min-h-[95vh] bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden pt-16  relative">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none overflow-x-hidden">
         {/* Glowing Lines */}
         <div className="absolute inset-0">
           <motion.div
-            className="absolute top-1/4 left-1/4 w-96 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+            className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
             animate={{
-              x: [-100, 100, -100],
+              x: [-50, 50, -50],
               opacity: [0.3, 0.8, 0.3]
             }}
             transition={{
@@ -25,9 +25,9 @@ export default function Hero() {
             }}
           />
           <motion.div
-            className="absolute top-1/3 right-1/4 w-80 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+            className="absolute top-1/3 right-1/4 w-48 sm:w-80 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
             animate={{
-              x: [100, -100, 100],
+              x: [50, -50, 50],
               opacity: [0.3, 0.8, 0.3]
             }}
             transition={{
@@ -38,9 +38,9 @@ export default function Hero() {
             }}
           />
           <motion.div
-            className="absolute bottom-1/3 left-1/3 w-72 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+            className="absolute bottom-1/3 left-1/3 w-40 sm:w-72 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
             animate={{
-              x: [-80, 80, -80],
+              x: [-40, 40, -40],
               opacity: [0.2, 0.6, 0.2]
             }}
             transition={{
@@ -89,9 +89,8 @@ export default function Hero() {
         })}
       </div>
 
-      <div className="container mx-auto px-3 sm:px-6 lg:px-8 min-h-screen relative z-10 py-8">
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="text-center max-w-xs sm:max-w-4xl">
+      <div className="container mx-auto px-3 sm:px-6 lg:px-8 min-h-screen flex items-center justify-center relative z-10 py-8 ">
+        <div className="text-center max-w-xs sm:max-w-4xl">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -101,7 +100,7 @@ export default function Hero() {
             >
               <div className="flex items-center space-x-2">
                 <Star className="h-4 w-4 text-orange-400 fill-current" />
-                <span className="text-xs sm:text-sm font-medium text-white">10+ Years of Innovation</span>
+                <span className="text-sm sm:text-base font-medium text-white">10+ Years of Innovation</span>
               </div>
             </motion.div>
 
@@ -110,9 +109,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="mb-6"
+              className="mb-4 sm:mb-6"
             >
-              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+              <h1 className="text-3xl sm:text-6xl  font-bold text-white leading-tight">
                 Digital Marketing
                 <br />
                 <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
@@ -128,7 +127,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-sm sm:text-lg md:text-xl text-slate-300 max-w-xs sm:max-w-3xl mx-auto mb-6 sm:mb-10 md:mb-12 leading-relaxed px-2"
+              className="text-base sm:text-xl md:text-2xl text-slate-300 max-w-xs sm:max-w-3xl mx-auto mb-4 sm:mb-10 md:mb-12 leading-relaxed px-2"
             >
               We help businesses grow through strategic digital marketing, creative development, and data-driven solutions. 
               From web design to SEO, social media to e-commerce - we&apos;ve got you covered.
@@ -148,7 +147,7 @@ export default function Hero() {
               >
                 <Button 
                   size="lg" 
-                  className="group bg-white text-slate-900 hover:bg-slate-100 border-0 shadow-xl px-4 sm:px-8 py-2.5 sm:py-4 text-sm sm:text-lg font-semibold rounded-lg w-full sm:w-auto" 
+                  className="group bg-white text-slate-900 hover:bg-slate-100 border-0 shadow-xl px-4 sm:px-8 py-2.5 sm:py-4 text-base sm:text-lg font-semibold rounded-lg w-full sm:w-auto" 
                   asChild
                 >
                   <Link href="/portfolio">
@@ -165,7 +164,7 @@ export default function Hero() {
               >
                 <Button 
                   size="lg" 
-                  className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white hover:bg-slate-700/50 shadow-xl px-4 sm:px-8 py-2.5 sm:py-4 text-sm sm:text-lg font-semibold rounded-lg w-full sm:w-auto" 
+                  className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white hover:bg-slate-700/50 shadow-xl px-4 sm:px-8 py-2.5 sm:py-4 text-base sm:text-lg font-semibold rounded-lg w-full sm:w-auto" 
                   asChild
                 >
                   <Link href="/contact">Get Free Quote</Link>
@@ -173,33 +172,6 @@ export default function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* Key Achievements */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              className="mt-8 sm:mt-16 pt-4 sm:pt-8 border-t border-slate-700/50"
-            >
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-6 text-center px-2">
-                <div className="space-y-1 sm:space-y-2">
-                  <div className="text-lg sm:text-3xl font-bold text-orange-400">290+</div>
-                  <div className="text-xs sm:text-sm text-slate-400">Happy Clients</div>
-                </div>
-                <div className="space-y-1 sm:space-y-2">
-                  <div className="text-lg sm:text-3xl font-bold text-orange-400">500+</div>
-                  <div className="text-xs sm:text-sm text-slate-400">Projects Completed</div>
-                </div>
-                <div className="space-y-1 sm:space-y-2">
-                  <div className="text-lg sm:text-3xl font-bold text-orange-400">96%</div>
-                  <div className="text-xs sm:text-sm text-slate-400">Success Rate</div>
-                </div>
-                <div className="space-y-1 sm:space-y-2">
-                  <div className="text-lg sm:text-3xl font-bold text-orange-400">24/7</div>
-                  <div className="text-xs sm:text-sm text-slate-400">Support</div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </div>
     </section>

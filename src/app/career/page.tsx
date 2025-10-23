@@ -9,15 +9,15 @@ export default function CareerPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden pt-16 sm:pt-20 relative">
+      <section className="h-[80vh] sm:min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden pt-16 sm:pt-20 relative">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Glowing Lines */}
           <div className="absolute inset-0">
             <motion.div
-              className="absolute top-1/4 left-1/4 w-96 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
               animate={{
-                x: [-100, 100, -100],
+                x: [-50, 50, -50],
                 opacity: [0.3, 0.8, 0.3]
               }}
               transition={{
@@ -27,9 +27,9 @@ export default function CareerPage() {
               }}
             />
             <motion.div
-              className="absolute top-1/3 right-1/4 w-80 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              className="absolute top-1/3 right-1/4 w-48 sm:w-80 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
               animate={{
-                x: [100, -100, 100],
+                x: [50, -50, 50],
                 opacity: [0.3, 0.8, 0.3]
               }}
               transition={{
@@ -40,9 +40,9 @@ export default function CareerPage() {
               }}
             />
             <motion.div
-              className="absolute bottom-1/3 left-1/3 w-72 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
+              className="absolute bottom-1/3 left-1/3 w-40 sm:w-72 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
               animate={{
-                x: [-80, 80, -80],
+                x: [-40, 40, -40],
                 opacity: [0.2, 0.6, 0.2]
               }}
               transition={{
@@ -95,7 +95,7 @@ export default function CareerPage() {
           />
         </div>
 
-        <div className="container mx-auto px-2 sm:px-6 lg:px-8 min-h-screen flex items-center py-8">
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8 h-full flex items-center py-4 sm:py-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
