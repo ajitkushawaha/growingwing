@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { portfolio } from "@/lib/constants"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ExternalLink, Filter, Star } from "lucide-react"
@@ -16,7 +17,11 @@ const getProjectUrl = (projectId: string) => {
     "ramkrushna-developers": "https://ramkrushnadevelopers.com",
     "healing-with-roohi": "https://healingwithroohi.com",
     "loutas": "https://www.lotusdigitalsystems.com",
-    "royaliij": "https://royaliij.com"
+    "royaliij": "https://royaliij.com",
+    "dentician": "https://dentician.com",
+    "printer-dekho": "https://printerdekho.com",
+    "projector-dekho": "https://projectordekho.com",
+    "tongue-tie-india": "https://tonguetieindia.com"
   };
   
   return projectUrls[projectId] || `https://${projectId}.com`;
@@ -143,7 +148,7 @@ export default function PortfolioPage() {
             </h1>
             
             <p className="text-sm sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-xs sm:max-w-3xl mx-auto px-2">
-              With our digital marketing proficiency, each client associated with us has given us positive feedback, 
+              With our Shopify development expertise, each client associated with us has given us positive feedback, 
               and tons of appreciation. Here is the showcase of a few of our works:
             </p>
 
@@ -246,9 +251,11 @@ export default function PortfolioPage() {
               >
                 {/* Project Image */}
                 <div className="relative h-64 overflow-hidden">
-                  <img 
+                  <Image 
                     src={project.image} 
                     alt={project.title}
+                    width={400}
+                    height={256}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>

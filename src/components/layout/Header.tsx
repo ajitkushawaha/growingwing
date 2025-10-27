@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navigation = [
+  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Our Work", href: "/portfolio" },
   { name: "Reviews", href: "/reviews" },
@@ -15,14 +18,24 @@ const navigation = [
     children: [
       { name: "Jobs", href: "/career/jobs" },
       { name: "Internship", href: "/career/internship" },
+      { name: "Contact Us", href: "/contact" },
     ],
   },
-  { name: "Contact Us", href: "/contact" },
+ 
 ]
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
+  
+  // Helper function to check if a path is active
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/"
+    }
+    return pathname.startsWith(href)
+  }
 
   useEffect(() => {
     let ticking = false
@@ -59,14 +72,17 @@ export default function Header() {
       >
         <div className="flex w-full items-center justify-between py-2 sm:py-3 min-w-0">
           <Link href="/" className="flex items-center flex-shrink-0">
-            <img 
+            <Image 
               src="/logo.png" 
               alt="GrowingWing" 
+              width={150}
+              height={50}
               className="h-10 sm:h-12 md:h-14 w-auto max-w-[120px] sm:max-w-none" 
               style={{ 
                 filter: 'drop-shadow(0 0 0 transparent)',
                 mixBlendMode: 'multiply'
               }}
+              priority
             />
           </Link>
 
@@ -77,7 +93,11 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className={`flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 ${
-                    isScrolled
+                    isActive(item.href)
+                      ? isScrolled
+                        ? "text-orange-600 bg-orange-50"
+                        : "text-orange-400 bg-white/10"
+                      : isScrolled
                       ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
                       : "text-white/90 hover:text-white hover:bg-white/10"
                   }`}
@@ -92,7 +112,11 @@ export default function Header() {
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-all duration-200 rounded-lg mx-2"
+                          className={`block px-4 py-3 text-sm transition-all duration-200 rounded-lg mx-2 ${
+                            isActive(child.href)
+                              ? "text-orange-600 bg-orange-50"
+                              : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                          }`}
                         >
                           {child.name}
                         </Link>
@@ -145,7 +169,11 @@ export default function Header() {
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-200 hover:scale-105"
+                    className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-200 hover:scale-105 ${
+                      isActive(item.href)
+                        ? "text-orange-600 bg-orange-50"
+                        : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                    }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -156,7 +184,11 @@ export default function Header() {
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-4 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all duration-200"
+                          className={`block px-4 py-2 text-sm rounded-lg transition-all duration-200 ${
+                            isActive(child.href)
+                              ? "text-orange-600 bg-orange-50"
+                              : "text-gray-600 hover:text-orange-600 hover:bg-orange-50"
+                          }`}
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {child.name}

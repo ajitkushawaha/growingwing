@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 const quickLinks = [
@@ -27,23 +28,34 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div>
-              <h3 className="text-2xl font-bold gradient-text">GrowingWing</h3>
+              <Link href="/" className="flex items-center mb-3">
+                <Image 
+                  src="/logo.png" 
+                  alt="GrowingWing" 
+                  width={200}
+                  height={50}
+                  className="h-12 w-auto max-w-[200px]"
+                  style={{ 
+                    filter: 'brightness(0) invert(1)',
+                  }}
+                />
+              </Link>
               <p className="text-gray-300 mt-2">
                 Certified Shopify Plus Agency specializing in custom themes, apps, 
                 migrations, and CRO to help brands scale and boost conversions.
               </p>
             </div>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.facebook.com/growingwingtech/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://twitter.com/growingwingtech" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/in/growing-wings-technology-017928128/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/growingwingtech/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>

@@ -157,12 +157,96 @@ export const portfolio = [
       speed: "+61%",
       revenue: "+155%"
     }
+  },
+  {
+    id: "dentician",
+    title: "Dentician",
+    category: "Health & Beauty",
+    image: "/portfolio/dentician.webp",
+    description: "Dentician is a dental services platform providing comprehensive dental care solutions.",
+    results: {
+      conversion: "+45%",
+      speed: "+55%",
+      revenue: "+140%"
+    }
+  },
+  {
+    id: "printer-dekho",
+    title: "Printer Dekho",
+    category: "Electronics",
+    image: "/portfolio/printerdekho.webp",
+    description: "Printer Dekho offers a wide range of printers and printing solutions for businesses and individuals.",
+    results: {
+      conversion: "+50%",
+      speed: "+58%",
+      revenue: "+160%"
+    }
+  },
+  {
+    id: "projector-dekho",
+    title: "Projector Dekho",
+    category: "Electronics",
+    image: "/portfolio/projectorsdekho.webp",
+    description: "Projector Dekho provides high-quality projectors and projection equipment for various applications.",
+    results: {
+      conversion: "+47%",
+      speed: "+60%",
+      revenue: "+145%"
+    }
+  },
+  {
+    id: "tongue-tie-india",
+    title: "Tongue Tie India",
+    category: "Health & Beauty",
+    image: "/portfolio/tonguetieindia.webp",
+    description: "Tongue Tie India specializes in providing information and services for tongue-tie conditions and treatments.",
+    results: {
+      conversion: "+42%",
+      speed: "+52%",
+      revenue: "+130%"
+    }
   }
 ]
 
 export const testimonials = [
   {
     id: 1,
+    name: "Rajiv C.",
+    role: "AVP Sales",
+    company: "Verified Client",
+    content: "Known Ms Seema T., as they served for our organisation, executed the assignment on time, putting there high level of expertise, quick responses and very humble, recommended for future assignments for our organisation and others, all the best seema very well done excellent.",
+    avatar: "/images/testimonials/rajiv.jpg",
+    rating: 5
+  },
+  {
+    id: 2,
+    name: "Gaurav A.",
+    role: "Director",
+    company: "USC Fundraisers Group",
+    content: "I would like to extend our appreciation for the dedicated & efficient work done by Growing Wings technologies for the website design, from the time of initial conceptualisation to the implementation. The responsiveness & professionalism that you have showed have touched us significantly.",
+    avatar: "/images/testimonials/gaurav.jpg",
+    rating: 5
+  },
+  {
+    id: 3,
+    name: "Ganesh D.",
+    role: "CEO",
+    company: "Verified Client",
+    content: "She was reliable, flexible and very responsive. Highly recommend.",
+    avatar: "/images/testimonials/ganesh.jpg",
+    rating: 5
+  },
+  {
+    id: 4,
+    name: "Augusto D.",
+    role: "CEO",
+    company: "Verified Client",
+    content: "I highly recommend Seema, she worked with us on our branding strategy and did an outstanding job, she was reliable and adaptable to our needs going the extra mile to provide us with excellent support and creative output.",
+    avatar: "/images/testimonials/augusto.jpg",
+    rating: 5
+  },
+  {
+    id: 5,
     name: "Jonathan Simpson",
     role: "Lead Manager",
     company: "Vahdam",
@@ -171,21 +255,12 @@ export const testimonials = [
     rating: 5
   },
   {
-    id: 2,
+    id: 6,
     name: "Angelina Johnson",
     role: "Sales Manager",
     company: "Electric Kicks",
     content: "GrowingWing made a huge difference to our business with their excellent work and knowledge of Shopify optimization and conversion techniques.",
     avatar: "/images/testimonials/angelina.jpg",
-    rating: 5
-  },
-  {
-    id: 3,
-    name: "Gabriel Townsend",
-    role: "Web Developer",
-    company: "Retrospec",
-    content: "We recommend GrowingWing to others for Shopify development services who are looking for the best e-commerce development agency.",
-    avatar: "/images/testimonials/gabriel.jpg",
     rating: 5
   }
 ]

@@ -287,14 +287,14 @@ export default function ContactPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Services Provided</h3>
                 <div className="grid grid-cols-2 gap-2">
                   {[
-                    "Business Branding",
-                    "Web Development",
-                    "Digital Marketing",
-                    "Social Marketing",
-                    "Bulk SMS",
-                    "SEO",
-                    "Google Ads",
-                    "Facebook Ads"
+                    "Shopify Store Setup",
+                    "Custom Apps Development",
+                    "Theme Customization",
+                    "Store Migration",
+                    "Product Enhancements",
+                    "Speed Optimization",
+                    "Store Optimization",
+                    "Custom Integrations"
                   ].map((service, index) => (
                     <div key={index} className="flex items-center space-x-2">
                       <CheckCircle className="h-4 w-4 text-green-500" />

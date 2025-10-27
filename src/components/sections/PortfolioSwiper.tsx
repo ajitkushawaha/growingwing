@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { portfolio } from "@/lib/constants";
@@ -23,7 +24,11 @@ const getProjectUrl = (projectId: string) => {
     "ramkrushna-developers": "https://ramkrushnadevelopers.com",
     "healing-with-roohi": "https://healingwithroohi.com",
     "loutas": "https://www.lotusdigitalsystems.com",
-    "royaliij": "https://royaliij.com"
+    "royaliij": "https://royaliij.com",
+    "dentician": "https://dentician.com",
+    "printer-dekho": "https://printerdekho.com",
+    "projector-dekho": "https://projectordekho.com",
+    "tongue-tie-india": "https://tonguetieindia.com"
   };
   
   return projectUrls[projectId] || `https://${projectId}.com`;
@@ -91,9 +96,11 @@ export default function PortfolioSwiper() {
                 >
                   {/* Project Image */}
                   <div className="relative h-64 overflow-hidden">
-                    <img 
+                    <Image 
                       src={project.image} 
                       alt={project.title}
+                      width={400}
+                      height={256}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>

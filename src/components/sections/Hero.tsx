@@ -127,7 +127,7 @@ export default function Hero() {
               className="mb-4 sm:mb-6"
             >
               <h1 className="text-3xl sm:text-6xl  font-bold text-white leading-tight">
-                Digital Marketing
+                Shopify Store Development
                 <br />
                 <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
                   That Drives Growth
@@ -144,8 +144,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-base sm:text-xl md:text-2xl text-slate-300 max-w-xs sm:max-w-3xl mx-auto mb-4 sm:mb-10 md:mb-12 leading-relaxed px-2"
             >
-              We help businesses grow through strategic digital marketing, creative development, and data-driven solutions. 
-              From web design to SEO, social media to e-commerce - we&apos;ve got you covered.
+              We help businesses grow through expert Shopify development, custom apps, store optimization, and migration services. 
+              From store setup to custom integrations - we&apos;ve got you covered.
             </motion.p>
 
             {/* CTA Buttons */}

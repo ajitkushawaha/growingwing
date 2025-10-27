@@ -67,29 +67,29 @@ const internshipPrograms = [
     ]
   },
   {
-    id: "digital-marketing",
-    title: "Digital Marketing Internship",
+    id: "shopify-development",
+    title: "Shopify Development Internship",
     duration: "3-6 Months",
     type: "Full-time/Part-time",
-    description: "Learn digital marketing strategies including SEO, social media marketing, and content creation.",
+    description: "Learn Shopify store development including theme customization, liquid templating, and app development.",
     skills: [
-      "SEO and SEM",
-      "Social media marketing",
-      "Content creation and strategy",
-      "Google Analytics and Ads",
-      "Email marketing",
-      "Marketing automation"
+      "Shopify Liquid templating",
+      "Theme customization and development",
+      "Shopify CLI and development tools",
+      "Custom app development",
+      "Store optimization techniques",
+      "Shopify APIs and integrations"
     ],
     requirements: [
-      "Currently pursuing or completed Marketing/Communication degree",
-      "Basic understanding of digital marketing",
-      "Good communication skills",
-      "Creative thinking",
-      "Analytical mindset"
+      "Currently pursuing or completed Computer Science/IT degree",
+      "Basic knowledge of HTML, CSS, and JavaScript",
+      "Understanding of e-commerce concepts",
+      "Problem-solving skills",
+      "Eagerness to learn new technologies"
     ],
     benefits: [
-      "Hands-on marketing campaign experience",
-      "Mentorship from marketing experts",
+      "Hands-on Shopify development experience",
+      "Mentorship from senior Shopify developers",
       "Certificate of completion",
       "Potential job offer",
       "Stipend based on performance",
@@ -250,7 +250,7 @@ export default function InternshipPage() {
               className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-8 py-4 mb-8"
             >
               <span className="text-white font-semibold">Learning Opportunities:</span>
-              <span className="text-orange-300 font-bold">3 PROGRAMS</span>
+              <span className="text-orange-300 font-bold">4 PROGRAMS</span>
             </motion.div>
 
             <motion.div

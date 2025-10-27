@@ -129,8 +129,8 @@ export default function AboutPage() {
             </h1>
             
             <p className="text-sm sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-xs sm:max-w-3xl mx-auto px-2">
-              We believe in growing your business by branding on web and provide all type of services 
-              from development to marketing.
+              We specialize in Shopify store development, customization, and optimization to help your e-commerce business 
+              grow and succeed in the competitive online marketplace.
             </p>
 
             <motion.div
@@ -177,11 +177,11 @@ export default function AboutPage() {
                 Our Mission Is To Take Your Business To The Next Level
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                By providing all sort of services from development to marketing, we help businesses 
-                establish a strong online presence and achieve sustainable growth in the digital landscape.
+                We provide comprehensive Shopify solutions including custom app development, store setup, theme customization, 
+                store migration, and performance optimization to help your e-commerce business thrive.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                Our team of experienced professionals combines technical expertise with creative vision 
+                Our team of experienced Shopify professionals combines technical expertise with creative vision 
                 to deliver solutions that not only meet but exceed our clients&apos; expectations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -358,8 +358,8 @@ export default function AboutPage() {
               Ready to Grow Your Business?
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Let&apos;s work together to take your business to the next level with our expert 
-              Shopify development and digital marketing services.
+              Let&apos;s work together to take your Shopify store to the next level with our expert 
+              Shopify development and optimization services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>

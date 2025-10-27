@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
@@ -51,9 +52,11 @@ export default function PortfolioBento() {
       >
         {/* Image */}
         <div className="relative h-80 overflow-hidden">
-          <img
+          <Image
             src={portfolioItems[0].image}
             alt={portfolioItems[0].title}
+            width={600}
+            height={320}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
         </div>
@@ -90,9 +93,11 @@ export default function PortfolioBento() {
       >
         {/* Image */}
         <div className="relative h-48 overflow-hidden">
-          <img
+          <Image
             src={portfolioItems[1].image}
             alt={portfolioItems[1].title}
+            width={600}
+            height={192}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
         </div>
@@ -131,9 +136,11 @@ export default function PortfolioBento() {
         >
           {/* Image */}
           <div className="relative h-32 overflow-hidden">
-            <img
+            <Image
               src={item.image}
               alt={item.title}
+              width={400}
+              height={128}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
           </div>
@@ -173,9 +180,11 @@ export default function PortfolioBento() {
         >
           {/* Image */}
           <div className="relative h-40 overflow-hidden">
-            <img
+            <Image
               src={item.image}
               alt={item.title}
+              width={600}
+              height={160}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
           </div>

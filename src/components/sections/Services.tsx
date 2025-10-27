@@ -113,11 +113,11 @@ export default function Services() {
         >
           <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-8 lg:p-12">
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
-              Meeting Your Digital Marketing Services needs is our priority
+              Meeting Your Shopify Development needs is our priority
             </h3>
             <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
               Where there is technology, there is prosperity. We know how to utilize the skills, 
-              knowledge, and wisdom of our team to deliver the best digital marketing services.
+              knowledge, and wisdom of our team to deliver the best Shopify development services.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

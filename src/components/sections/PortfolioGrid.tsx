@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { portfolio } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -54,9 +55,11 @@ export default function PortfolioGrid() {
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
-                <img 
+                <Image 
                   src={project.image} 
                   alt={project.title}
+                  width={400}
+                  height={256}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
