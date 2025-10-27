@@ -213,7 +213,7 @@ export const testimonials = [
     id: 1,
     name: "Rajiv C.",
     role: "AVP Sales",
-    company: "Verified Client",
+    company: "Aimsindia",
     content: "Known Ms Seema T., as they served for our organisation, executed the assignment on time, putting there high level of expertise, quick responses and very humble, recommended for future assignments for our organisation and others, all the best seema very well done excellent.",
     avatar: "/images/testimonials/rajiv.jpg",
     rating: 5
@@ -231,7 +231,7 @@ export const testimonials = [
     id: 3,
     name: "Ganesh D.",
     role: "CEO",
-    company: "Verified Client",
+    company: "Printer Dekho",
     content: "She was reliable, flexible and very responsive. Highly recommend.",
     avatar: "/images/testimonials/ganesh.jpg",
     rating: 5
@@ -240,7 +240,7 @@ export const testimonials = [
     id: 4,
     name: "Augusto D.",
     role: "CEO",
-    company: "Verified Client",
+    company: "Copper Kitchen Store",
     content: "I highly recommend Seema, she worked with us on our branding strategy and did an outstanding job, she was reliable and adaptable to our needs going the extra mile to provide us with excellent support and creative output.",
     avatar: "/images/testimonials/augusto.jpg",
     rating: 5
@@ -249,7 +249,7 @@ export const testimonials = [
     id: 5,
     name: "Jonathan Simpson",
     role: "Lead Manager",
-    company: "Vahdam",
+    company: "Healing With Roohi",
     content: "Working with GrowingWing has been a pleasure. The work done by team and their understanding of Shopify development helped our business scale significantly.",
     avatar: "/images/testimonials/jonathan.jpg",
     rating: 5
@@ -258,7 +258,7 @@ export const testimonials = [
     id: 6,
     name: "Angelina Johnson",
     role: "Sales Manager",
-    company: "Electric Kicks",
+    company: "Chef Supplies Hub",
     content: "GrowingWing made a huge difference to our business with their excellent work and knowledge of Shopify optimization and conversion techniques.",
     avatar: "/images/testimonials/angelina.jpg",
     rating: 5

@@ -48,20 +48,66 @@
   
   .portfolio-swiper .swiper-button-next,
   .portfolio-swiper .swiper-button-prev {
-    @apply text-orange-600 hover:text-orange-700 transition-colors;
+    
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 50% !important;
+    width: 56px !important;
+    height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    color: #ea580c !important;
+    padding: 10px;
   }
   
-  .portfolio-swiper .swiper-button-next:after,
-  .portfolio-swiper .swiper-button-prev:after {
-    @apply text-2xl;
+  .portfolio-swiper .swiper-button-next:hover,
+  .portfolio-swiper .swiper-button-prev:hover {
+    background: white !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 15px 35px rgba(234, 88, 12, 0.3) !important;
+  }
+  
+  .portfolio-swiper .swiper-button-next:hover::after,
+  .portfolio-swiper .swiper-button-prev:hover::after {
+    color: white !important;
+  }
+  
+  .portfolio-swiper .swiper-button-next::after,
+  .portfolio-swiper .swiper-button-prev::after {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    color: #ea580c !important;
+    transition: color 0.3s ease !important;
+  }
+  
+  .portfolio-swiper .swiper-button-disabled {
+    opacity: 0.3 !important;
+    cursor: not-allowed !important;
+    background: white !important;
+    transform: none !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+    border-color: #e5e7eb !important;
+  }
+  
+  .portfolio-swiper .swiper-button-disabled::after {
+    color: #9ca3af !important;
   }
   
   .portfolio-swiper .swiper-pagination-bullet {
-    @apply bg-orange-200;
+    background: #fed7aa !important;
+    opacity: 0.7 !important;
+    width: 10px !important;
+    height: 10px !important;
+    margin: 0 4px !important;
+    transition: all 0.3s ease !important;
   }
   
   .portfolio-swiper .swiper-pagination-bullet-active {
-    @apply bg-orange-600;
+    background: #ea580c !important;
+    opacity: 1 !important;
+    width: 32px !important;
+    border-radius: 5px !important;
   }
 }
 
