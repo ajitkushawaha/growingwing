@@ -38,14 +38,14 @@ export default function PricingPackages() {
               viewport={{ once: true }}
               className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${
                 pkg.popular 
-                  ? 'border-blue-500 scale-105' 
+                  ? 'border-blue-900 scale-105' 
                   : 'border-gray-200 hover:border-blue-300'
               }`}
             >
               {/* Popular Badge */}
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
+                  <div className="bg-blue-900 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                     <Star className="h-4 w-4 fill-current" />
                     <span>Most Popular</span>
                   </div>
@@ -55,7 +55,7 @@ export default function PricingPackages() {
               {/* Package Header */}
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
-                <div className="text-4xl font-bold text-blue-600 mb-2">{pkg.price}</div>
+                <div className="text-4xl font-bold text-blue-900 mb-2">{pkg.price}</div>
                 <p className="text-gray-600">{pkg.description}</p>
               </div>
 
@@ -73,8 +73,8 @@ export default function PricingPackages() {
               <Button 
                 className={`w-full ${
                   pkg.popular 
-                    ? 'bg-blue-600 hover:bg-blue-700' 
-                    : 'bg-gray-900 hover:bg-gray-800'
+                    ? 'bg-orange-400 hover:bg-orange-500' 
+                    : 'bg-blue-800 hover:bg-blue-900'
                 }`}
                 asChild
               >

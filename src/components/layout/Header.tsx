@@ -60,7 +60,7 @@ export default function Header() {
         <div className="flex w-full items-center justify-between py-2 sm:py-3 min-w-0">
           <Link href="/" className="flex items-center flex-shrink-0">
             <img 
-              src="https://growingwing.net/public/img/growing-logo.png" 
+              src="/logo.png" 
               alt="GrowingWing" 
               className="h-10 sm:h-12 md:h-14 w-auto max-w-[120px] sm:max-w-none" 
               style={{ 

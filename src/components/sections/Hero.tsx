@@ -4,12 +4,27 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Star } from "lucide-react"
 import Link from "next/link"
+import { Spotlight } from "@/components/ui/spotlight"
 
 export default function Hero() {
   return (
     <section className="min-h-[95vh] bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden pt-16  relative">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-x-hidden">
+        {/* Spotlight Effect */}
+        <Spotlight
+          className="-top-40 left-0 md:-top-20 md:left-40"
+          fill="white"
+        />
+        
+        {/* Grid Background */}
+        <div 
+          className="absolute inset-0 [background-size:40px_40px]"
+          style={{
+            backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)'
+          }}
+        />
+        
         {/* Glowing Lines */}
         <div className="absolute inset-0">
           <motion.div
