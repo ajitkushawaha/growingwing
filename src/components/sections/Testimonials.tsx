@@ -13,7 +13,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <div className="flex items-center justify-center gap-2">
             <Star className="h-8 w-8 text-yellow-500" />
@@ -25,9 +25,7 @@ export default function Testimonials() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
           What Our Happy Clients Are Saying
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-           What Our Happy Clients Are Saying
-          </p>
+         
         </motion.div>
 
         {/* Video Testimonials */}
@@ -74,7 +72,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 lg:p-12"
+          className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 lg:p-10"
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">

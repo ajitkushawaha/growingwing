@@ -277,7 +277,7 @@ export default function InternshipPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Why Intern With GrowingWing?
               </h2>
@@ -346,7 +346,7 @@ export default function InternshipPage() {
 
             <div className="grid gap-8">
               {internshipPrograms.map((program) => (
-                <div key={program.id} className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow">
+                <div key={program.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">{program.title}</h3>

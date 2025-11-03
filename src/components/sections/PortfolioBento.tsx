@@ -16,7 +16,13 @@ const getProjectUrl = (projectId: string) => {
     "ramkrushna-developers": "https://ramkrushnadevelopers.com",
     "healing-with-roohi": "https://healingwithroohi.com",
     "loutas": "https://www.lotusdigitalsystems.com",
-    "royaliij": "https://royaliij.com"
+    "royaliij": "https://royaliij.com",
+    "dentician": "https://dentician.com",
+    "printer-dekho": "https://printerdekho.com",
+    "projector-dekho": "https://projectordekho.com",
+    "tongue-tie-india": "https://tonguetieindia.com",
+    "yellowframes-media": "https://yellowframesmedia.com",
+    "britime": "https://britime.in"
   };
   
   return projectUrls[projectId] || `https://${projectId}.com`;
@@ -24,14 +30,14 @@ const getProjectUrl = (projectId: string) => {
 
 export default function PortfolioBento() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Our Creative Development Projects

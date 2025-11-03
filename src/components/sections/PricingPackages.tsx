@@ -16,7 +16,7 @@ export default function PricingPackages() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Our Pricing Packages
@@ -90,7 +90,7 @@ export default function PricingPackages() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-20"
+          className="mt-12"
         >
           <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-12">
             Affordable SEO Services Packages

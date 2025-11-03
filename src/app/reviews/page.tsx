@@ -150,7 +150,7 @@ export default function ReviewsPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -185,7 +185,7 @@ export default function ReviewsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               What Our Clients Say
@@ -203,7 +203,7 @@ export default function ReviewsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative group"
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative group"
               >
                 {/* Quote Icon */}
                 <div className="absolute top-6 right-6 text-blue-100 group-hover:text-blue-200 transition-colors">
@@ -247,7 +247,7 @@ export default function ReviewsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               More Client Success Stories

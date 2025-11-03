@@ -16,7 +16,7 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Our Recent Project Work
@@ -32,7 +32,7 @@ export default function Portfolio() {
         </motion.div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {portfolio.map((project, index) => (
             <motion.div
               key={project.id}
@@ -40,7 +40,7 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col"
             >
               {/* Project Image */}
               <div className="relative h-64 bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
@@ -65,7 +65,7 @@ export default function Portfolio() {
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-3">
                   <h4 className="text-lg font-bold text-gray-900">{project.title}</h4>
                   <span className="text-xs font-semibold text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
@@ -93,10 +93,12 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                <Button variant="outline" size="sm" className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors">
-                  View Case Study
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <div className="mt-auto">
+                  <Button variant="outline" size="sm" className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors">
+                    View Case Study
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
               </div>
             </motion.div>
           ))}

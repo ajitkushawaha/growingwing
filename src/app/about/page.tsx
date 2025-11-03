@@ -118,17 +118,17 @@ export default function AboutPage() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center space-x-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 rounded-full px-3 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8"
+              className="inline-flex items-center space-x-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 rounded-full px-3 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-8"
             >
-              <Star className="h-5 w-5 text-orange-400" />
-              <span className="text-orange-200 font-semibold">About Our Company</span>
+              <Star className="h-4 w-4 sm:h-5 sm:w-5 text-orange-400" />
+              <span className="text-xs sm:text-sm text-orange-200 font-semibold">About Our Company</span>
             </motion.div>
 
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-3 sm:mb-6">
               About <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">GrowingWing</span>
             </h1>
             
-            <p className="text-sm sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-xs sm:max-w-3xl mx-auto px-2">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-4 sm:mb-8 max-w-xs sm:max-w-3xl mx-auto px-2">
               We specialize in Shopify store development, customization, and optimization to help your e-commerce business 
               grow and succeed in the competitive online marketplace.
             </p>
@@ -137,10 +137,10 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 sm:px-8 py-2 sm:py-4 mb-6 sm:mb-8"
+              className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-8 py-2 sm:py-4 mb-4 sm:mb-8"
             >
-              <span className="text-white font-semibold">Our Mission:</span>
-              <span className="text-orange-300 font-bold">GROW YOUR BUSINESS</span>
+              <span className="text-xs sm:text-sm text-white font-semibold">Our Mission:</span>
+              <span className="text-xs sm:text-sm text-orange-300 font-bold">GROW YOUR BUSINESS</span>
             </motion.div>
 
             <motion.div
@@ -149,13 +149,13 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center relative z-10 px-2"
             >
-              <Button size="lg" variant="secondary" asChild>
+              <Button size="lg" variant="secondary" className="text-sm sm:text-base" asChild>
                 <Link href="/contact">
                   Get In Touch
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-orange-400 border-orange-400 bg-transparent hover:bg-orange-500 hover:text-white transition-colors" asChild>
+              <Button size="lg" variant="outline" className="text-sm sm:text-base text-orange-400 border-orange-400 bg-transparent hover:bg-orange-500 hover:text-white transition-colors" asChild>
                 <Link href="/portfolio">View Our Work</Link>
               </Button>
             </motion.div>
@@ -201,8 +201,8 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-8">
-                <div className="grid grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-white rounded-xl p-6 text-center shadow-sm">
                     <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Target className="h-6 w-6 text-orange-600" />
@@ -246,7 +246,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Our Achievements
@@ -264,7 +264,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="text-4xl font-bold text-orange-600 mb-2">{stat.value}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
@@ -282,7 +282,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Why Choose GrowingWing?
@@ -331,7 +331,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 rounded-2xl p-8 text-center hover:bg-gray-100 transition-colors"
+                className="bg-gray-50 rounded-2xl p-6 text-center hover:bg-gray-100 transition-colors"
               >
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
                   {feature.icon}
@@ -365,7 +365,7 @@ export default function AboutPage() {
               <Button size="lg" variant="secondary" asChild>
                 <Link href="/contact">Get Started Today</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-orange-500 border-orange-500 bg-transparent hover:bg-orange-500 hover:text-white transition-colors" asChild>
+              <Button size="lg" variant="outline" className="text-white border-white bg-transparent hover:bg-orange-500 hover:text-white transition-colors" asChild>
                 <Link href="/portfolio">View Our Work</Link>
               </Button>
             </div>

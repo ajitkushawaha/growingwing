@@ -33,7 +33,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Specialized Services for Your{" "}
@@ -57,7 +57,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
+                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200 flex flex-col"
               >
                 {/* Icon */}
                 <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
@@ -65,7 +65,7 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <div className="space-y-4">
+                <div className="space-y-4 flex-1 flex flex-col">
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                     {service.title}
                   </h3>
@@ -75,7 +75,7 @@ export default function Services() {
                   </p>
 
                   {/* Features List */}
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 flex-1">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-sm text-gray-500">
                         <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></div>
@@ -85,7 +85,7 @@ export default function Services() {
                   </ul>
 
                   {/* CTA Button */}
-                  <div className="pt-4">
+                  <div className="pt-4 mt-auto">
                     <Button 
                       variant="outline" 
                       className="w-full group-hover:bg-blue-50 group-hover:border-blue-300 transition-colors"
@@ -109,9 +109,9 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-12"
         >
-          <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-8 lg:p-12">
+          <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-6 lg:p-10">
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
               Meeting Your Shopify Development needs is our priority
             </h3>

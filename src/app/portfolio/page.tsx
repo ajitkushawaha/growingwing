@@ -21,7 +21,9 @@ const getProjectUrl = (projectId: string) => {
     "dentician": "https://dentician.com",
     "printer-dekho": "https://printerdekho.com",
     "projector-dekho": "https://projectordekho.com",
-    "tongue-tie-india": "https://tonguetieindia.com"
+    "tongue-tie-india": "https://tonguetieindia.com",
+    "yellowframes-media": "https://yellowframesmedia.com",
+    "britime": "https://britime.in"
   };
   
   return projectUrls[projectId] || `https://${projectId}.com`;
@@ -247,7 +249,7 @@ export default function PortfolioPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col"
               >
                 {/* Project Image */}
                 <div className="relative h-64 overflow-hidden">
@@ -261,7 +263,7 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-3">
                     <h4 className="text-lg font-bold text-gray-900">{project.title}</h4>
                     <span className="text-xs font-semibold text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
@@ -269,16 +271,18 @@ export default function PortfolioPage() {
                     </span>
                   </div>
                   
-                  <p className="text-gray-600 text-sm mb-6 line-clamp-3">
+                  <p className="text-gray-600 text-sm mb-6 line-clamp-3 flex-1">
                     {project.description}
                   </p>
 
-                  <Button variant="outline" size="sm" className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors" asChild>
-                    <Link href={getProjectUrl(project.id)} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Visit Project
-                    </Link>
-                  </Button>
+                  <div className="mt-auto">
+                    <Button variant="outline" size="sm" className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors" asChild>
+                      <Link href={getProjectUrl(project.id)} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Visit Project
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -308,9 +312,9 @@ export default function PortfolioPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mt-16"
+            className="text-center mt-12"
           >
-            <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
+            <div className="bg-white rounded-2xl p-6 lg:p-10 shadow-lg">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
                 Ready to Start Your Project?
               </h2>

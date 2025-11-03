@@ -86,18 +86,18 @@ export const portfolio = [
       revenue: "+200%"
     }
   },
-  {
-    id: "chef-supplies-hub",
-    title: "Chef Supplies Hub",
-    category: "Food & Beverage",
-    image: "/portfolio/chef.webp",
-    description: "Welcome to ChefSuppliesHub – your one-stop shop for quality chef tools.",
-    results: {
-      conversion: "+41%",
-      speed: "+48%",
-      revenue: "+110%"
-    }
-  },
+  // {
+  //   id: "chef-supplies-hub",
+  //   title: "Chef Supplies Hub",
+  //   category: "Food & Beverage",
+  //   image: "/portfolio/chef.webp",
+  //   description: "Welcome to ChefSuppliesHub – your one-stop shop for quality chef tools.",
+  //   results: {
+  //     conversion: "+41%",
+  //     speed: "+48%",
+  //     revenue: "+110%"
+  //   }
+  // },
   {
     id: "copper-kitchen-store",
     title: "Copper Kitchen Store",
@@ -204,6 +204,30 @@ export const portfolio = [
       conversion: "+42%",
       speed: "+52%",
       revenue: "+130%"
+    }
+  },
+  {
+    id: "yellowframes-media",
+    title: "Yellow Frames Media",
+    category: "Electronics",
+    image: "/portfolio/yellowframesdubai.png",
+    description: "Yellow Frames Media is a creative media company delivering exceptional digital experiences and visual storytelling solutions.",
+    results: {
+      conversion: "+54%",
+      speed: "+61%",
+      revenue: "+175%"
+    }
+  },
+  {
+    id: "britime",
+    title: "Britime Watches",
+    category: "Electronics",
+    image: "/portfolio/BritimeWatches.png",
+    description: "Britime offers premium timepieces and watches, combining elegance with precision craftsmanship for discerning customers.",
+    results: {
+      conversion: "+49%",
+      speed: "+57%",
+      revenue: "+160%"
     }
   }
 ]

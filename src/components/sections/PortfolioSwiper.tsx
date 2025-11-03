@@ -28,7 +28,9 @@ const getProjectUrl = (projectId: string) => {
     "dentician": "https://dentician.com",
     "printer-dekho": "https://printerdekho.com",
     "projector-dekho": "https://projectordekho.com",
-    "tongue-tie-india": "https://tonguetieindia.com"
+    "tongue-tie-india": "https://tonguetieindia.com",
+    "yellowframes-media": "https://yellowframesmedia.com",
+    "britime": "https://britime.in"
   };
   
   return projectUrls[projectId] || `https://${projectId}.com`;
@@ -36,14 +38,14 @@ const getProjectUrl = (projectId: string) => {
 
 export default function PortfolioSwiper() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+    <section className=" bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Our Creative Development Projects
@@ -92,7 +94,7 @@ export default function PortfolioSwiper() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full"
+                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col"
                 >
                   {/* Project Image */}
                   <div className="relative h-64 overflow-hidden">
@@ -106,7 +108,7 @@ export default function PortfolioSwiper() {
                   </div>
 
                   {/* Project Content */}
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center justify-between mb-3">
                       <h4 className="text-lg font-bold text-gray-900">{project.title}</h4>
                       <span className="text-xs font-semibold text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
@@ -114,16 +116,18 @@ export default function PortfolioSwiper() {
                       </span>
                     </div>
                     
-                    <p className="text-gray-600 text-sm mb-6 line-clamp-3">
+                    <p className="text-gray-600 text-sm mb-6 line-clamp-3 flex-1">
                       {project.description}
                     </p>
 
-                    <Button variant="outline" size="sm" className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors" asChild>
-                      <Link href={getProjectUrl(project.id)} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Visit Project
-                      </Link>
-                    </Button>
+                    <div className="mt-auto">
+                      <Button variant="outline" size="sm" className="w-full group-hover:bg-orange-50 group-hover:border-orange-300 transition-colors" asChild>
+                        <Link href={getProjectUrl(project.id)} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Visit Project
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 </motion.div>
               </SwiperSlide>

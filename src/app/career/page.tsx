@@ -157,7 +157,7 @@ export default function CareerPage() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Why Choose GrowingWing?
               </h2>
@@ -209,7 +209,7 @@ export default function CareerPage() {
               Explore Opportunities
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <Briefcase className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Full-Time Positions</h3>
                 <p className="text-gray-600 mb-6">
@@ -220,7 +220,7 @@ export default function CareerPage() {
                 </Button>
               </div>
 
-              <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <GraduationCap className="h-12 w-12 text-purple-600 mx-auto mb-4" />
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Internship Program</h3>
                 <p className="text-gray-600 mb-6">
